@@ -5,7 +5,7 @@ import RandomPicture from "./Components/RandomPicture";
 
 function App() {
   return (
-    <div>
+    <div className="page">
       <MenuHeader></MenuHeader>
       <div className="content">
         <RandomPicture></RandomPicture>

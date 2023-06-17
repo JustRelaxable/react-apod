@@ -27,3 +27,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* unvisited link */
+a:link {
+  color: var(--color-5);
+}
+
+/* visited link */
+a:visited {
+  color: var(--color-5);
+}
+
+/* mouse over link */
+a:hover {
+  color: var(--color-1);
+}
+
+/* selected link */
+a:active {
+  color: var(--color-2);
+}

@@ -29,8 +29,10 @@ export default function RandomPicture({}) {
       });
   }, [randomRequestCount]);
 
+  const containerHeightStyle = dataReceived ? {} : { height: "700px" };
+
   return (
-    <div className="random-picture-container">
+    <div className="random-picture-container" style={containerHeightStyle}>
       {!dataReceived && <p>Waiting to receive data</p>}
       {dataReceived && (
         <>
