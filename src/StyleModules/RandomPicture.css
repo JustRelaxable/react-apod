@@ -19,3 +19,14 @@
   display: flex;
   gap: 30px;
 }
+@media screen and (max-width: 1168px) {
+  .random-picture-picture {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .random-picture-picture {
+    max-width: 90%;
+  }
+}

@@ -10,8 +10,12 @@
 }
 
 .header-logo {
-  fill: black;
   height: 100%;
+  max-width: 110px;
+}
+
+.header-logo path {
+  fill: white;
 }
 
 .header-links {
@@ -27,4 +31,19 @@
 
 .logo-text {
   font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .logo-text {
+    display: none;
+  }
+  .menu-header {
+    height: 4rem;
+  }
+}
+
+@media screen and (max-width: 534px) {
+  .header-links {
+    display: none;
+  }
 }

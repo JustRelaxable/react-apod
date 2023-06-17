@@ -1,11 +1,12 @@
 import "../StyleModules/MenuHeader.css";
 import nasaLogo from "../Assets/SVG/NASA_Worm_logo.svg";
+import NasaLogo from "./NasaLogo";
 
 export default function MenuHeader() {
   return (
     <div className="menu-header">
       <div className="logo-with-text">
-        <img src={nasaLogo} alt="Nasa Worm Logo" className="header-logo" />
+        <NasaLogo className="header-logo"></NasaLogo>
         <p className="logo-text">
           <span className="logo-seperator"> - </span>Astronomy Picture of the
           Day

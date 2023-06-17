@@ -10,9 +10,11 @@ export default function RandomPicture({}) {
   const [fullImageURL, setFullImageURL] = useState("");
   const [title, setTitle] = useState("");
   const [dataReceived, setDataReceived] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     setDataReceived(false);
+    setImageLoaded(false);
     fetch(
       "https://api.nasa.gov/planetary/apod?api_key=xVAwzJcqMnRhu5ikdWqjghdIKf65P3GkR6V97t0c&count=1"
     )
@@ -26,6 +28,11 @@ export default function RandomPicture({}) {
         setFullImageURL(x.hdurl);
         setDataReceived(true);
         console.log(x);
+        const image = new Image();
+        image.src = x.url;
+        image.onload = () => {
+          setImageLoaded(true);
+        };
       });
   }, [randomRequestCount]);
 
@@ -36,7 +43,16 @@ export default function RandomPicture({}) {
       {!dataReceived && <p>Waiting to receive data</p>}
       {dataReceived && (
         <>
-          <img src={imageURL} className="random-picture-picture"></img>
+          {imageLoaded ? (
+            <img
+              src={imageURL}
+              className="random-picture-picture"
+              onLoad={() => {}}
+            ></img>
+          ) : (
+            <p>Event Image is Loading...</p>
+          )}
+
           <h2>
             {title} - {date}
           </h2>
