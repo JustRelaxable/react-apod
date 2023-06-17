@@ -9,6 +9,7 @@
 
 .random-picture-picture {
   max-width: 60%;
+  max-height: 30rem;
   border: 10px solid var(--color-1);
   border-radius: 10px;
   box-shadow: 4px 4px 5px var(--shadow-color-1);
