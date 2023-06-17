@@ -43,6 +43,7 @@ export default function RandomPicture({}) {
       {!dataReceived && <p>Waiting to receive data</p>}
       {dataReceived && (
         <>
+          <h1 className="main-header">Random Astronomy Picture of the Day</h1>
           {imageLoaded ? (
             <img
               src={imageURL}

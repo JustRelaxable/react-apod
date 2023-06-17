@@ -1,0 +1,13 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+}
+
+.question-container {
+}
+
+.about-header {
+  margin-bottom: 20px;
+}
