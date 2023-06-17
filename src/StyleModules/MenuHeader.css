@@ -1,0 +1,30 @@
+.menu-header {
+  height: 5rem;
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-3);
+  border-bottom: 1px solid var(--color-1);
+  box-shadow: 0 5px 10px var(--shadow-color-1);
+}
+
+.header-logo {
+  fill: black;
+  height: 100%;
+}
+
+.header-links {
+  display: flex;
+  gap: 12px;
+}
+
+.logo-with-text {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-text {
+  font-weight: 700;
+}

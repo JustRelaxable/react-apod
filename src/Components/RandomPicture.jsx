@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../StyleModules/RandomPicture.css";
+import PrimaryButton from "./PrimaryButton";
 
 export default function RandomPicture({}) {
   const [randomRequestCount, setRandomRequestCount] = useState(0);
@@ -38,19 +39,19 @@ export default function RandomPicture({}) {
             {title} - {date}
           </h2>
           <p>{explanation}</p>
-          <div>
-            <button
+          <div className="button-container">
+            <PrimaryButton
               onClick={() => setRandomRequestCount(randomRequestCount + 1)}
             >
               Another Random Event!
-            </button>
-            <button
+            </PrimaryButton>
+            <PrimaryButton
               onClick={() => {
                 window.open(fullImageURL, "_blank");
               }}
             >
               Load Full Size Image
-            </button>
+            </PrimaryButton>
           </div>
         </>
       )}
