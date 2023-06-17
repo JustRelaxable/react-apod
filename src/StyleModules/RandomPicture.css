@@ -1,0 +1,11 @@
+.random-picture-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.random-picture-picture {
+  max-width: 100%;
+}
