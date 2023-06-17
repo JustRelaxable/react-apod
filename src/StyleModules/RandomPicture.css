@@ -5,12 +5,13 @@
   align-items: center;
   text-align: center;
   gap: 12px;
+  max-width: 1200px;
 }
 
 .random-picture-picture {
   max-width: 60%;
   max-height: 30rem;
-  border: 10px solid var(--color-1);
+  border: 2px solid var(--color-1);
   border-radius: 10px;
   box-shadow: 4px 4px 5px var(--shadow-color-1);
 }
@@ -27,6 +28,13 @@
 
 @media screen and (max-width: 768px) {
   .random-picture-picture {
-    max-width: 90%;
+    max-width: 100%;
+    border: 2px solid var(--color-1);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .random-picture-picture {
+    border: 0;
   }
 }

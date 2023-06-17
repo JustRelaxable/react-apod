@@ -8,6 +8,7 @@ function App() {
     <div className="page">
       <MenuHeader></MenuHeader>
       <div className="content">
+        <h1 className="main-header">Random Astronomy Picture of the Day</h1>
         <RandomPicture></RandomPicture>
       </div>
       <Footer></Footer>
