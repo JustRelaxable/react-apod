@@ -2,6 +2,7 @@ import "../StyleModules/MenuHeader.css";
 import nasaLogo from "../Assets/SVG/NASA_Worm_logo.svg";
 import NasaLogo from "./NasaLogo";
 import { Link } from "react-router-dom";
+import BurgerMenuButton from "./BurgerMenuButton";
 
 export default function MenuHeader() {
   return (
@@ -16,9 +17,12 @@ export default function MenuHeader() {
         </div>
       </Link>
 
-      <div className="header-links">
+      <div className="header-links-desktop">
         <a href="#">Choose Date</a>
         <Link to="/about">About APOD</Link>
+      </div>
+      <div className="header-burger-menu">
+        <BurgerMenuButton></BurgerMenuButton>
       </div>
     </div>
   );

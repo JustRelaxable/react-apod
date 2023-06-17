@@ -7,6 +7,7 @@
   background-color: var(--color-3);
   border-bottom: 1px solid var(--color-1);
   box-shadow: 0 5px 10px var(--shadow-color-1);
+  position: relative;
 }
 
 .header-logo {
@@ -18,7 +19,7 @@
   fill: white;
 }
 
-.header-links {
+.header-links-desktop {
   display: flex;
   gap: 12px;
 }
@@ -33,6 +34,11 @@
   font-weight: 700;
 }
 
+.header-burger-menu {
+  display: none;
+  height: 100%;
+}
+
 @media screen and (max-width: 768px) {
   .logo-text {
     display: none;
@@ -44,7 +50,10 @@
 }
 
 @media screen and (max-width: 534px) {
-  .header-links {
+  .header-links-desktop {
     display: none;
+  }
+  .header-burger-menu {
+    display: block;
   }
 }
