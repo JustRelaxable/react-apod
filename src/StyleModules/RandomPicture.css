@@ -8,6 +8,11 @@
   max-width: 1200px;
 }
 
+.random-picture-container > iframe {
+  width: 510px;
+  height: 310px;
+}
+
 .random-picture-picture {
   max-width: 60%;
   max-height: 30rem;

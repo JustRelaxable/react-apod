@@ -11,6 +11,7 @@ export default function RandomPicture({}) {
   const [title, setTitle] = useState("");
   const [dataReceived, setDataReceived] = useState(false);
   const [selectedDate, setSelectedDate] = useState("");
+  const [mediaType, setMediaType] = useState("");
   const [datePickerDate, setDatePickerDate] = useState(
     new Date().toISOString().split("T")[0]
   );
@@ -29,6 +30,7 @@ export default function RandomPicture({}) {
         setImageURL(x.url);
         setTitle(x.title);
         setFullImageURL(x.hdurl);
+        setMediaType(x["media_type"]);
         setDataReceived(true);
       });
   }, [randomRequestCount]);
@@ -46,6 +48,7 @@ export default function RandomPicture({}) {
         setImageURL(x.url);
         setTitle(x.title);
         setFullImageURL(x.hdurl);
+        setMediaType(x["media_type"]);
         setDataReceived(true);
       });
   }, [selectedDate]);
@@ -58,11 +61,16 @@ export default function RandomPicture({}) {
       {dataReceived && (
         <>
           <h1 className="main-header">Random Astronomy Picture of the Day</h1>
-          <img
-            src={imageURL}
-            className="random-picture-picture"
-            onLoad={() => {}}
-          ></img>
+          {mediaType === "image" && (
+            <img
+              src={imageURL}
+              className="random-picture-picture"
+              onLoad={() => {}}
+            ></img>
+          )}
+          {mediaType === "video" && (
+            <iframe className="random-picture-picture" src={imageURL}></iframe>
+          )}
           <h2>
             {title} - {date}
           </h2>
