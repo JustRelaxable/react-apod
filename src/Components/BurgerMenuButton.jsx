@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "../StyleModules/BurgerMenuButton.css";
 import { useState } from "react";
 
-export default function BurgerMenuButton() {
+export default function BurgerMenuButton({ datePickerRef }) {
   const [menuActive, setMenuActive] = useState(false);
   const switchMenuActive = () => {
     setMenuActive((x) => !x);
@@ -20,6 +20,14 @@ export default function BurgerMenuButton() {
       </svg>
       {menuActive && (
         <div className="menu-container">
+          <a
+            href="#"
+            onClick={() => {
+              datePickerRef.current.showPicker();
+            }}
+          >
+            Choose Date
+          </a>
           <Link to="/about" onClick={switchMenuActive}>
             About
           </Link>

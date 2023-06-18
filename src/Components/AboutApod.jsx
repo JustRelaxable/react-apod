@@ -8,7 +8,7 @@ export default function AboutApod() {
       <div className="about-container">
         {questions.map((x, i) => {
           return (
-            <div className={"question-container"}>
+            <div className={"question-container"} key={x.id}>
               <h2>{x.question}</h2>
               <p>{x.answer}</p>
             </div>

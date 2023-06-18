@@ -8,7 +8,6 @@ export default function NasaLogo({ className }) {
       width="508.204px"
       height="141.732px"
       viewBox="0 0 508.204 141.732"
-      enable-background="new 0 0 508.204 141.732"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g id="main_layer">

@@ -3,8 +3,11 @@ import nasaLogo from "../Assets/SVG/NASA_Worm_logo.svg";
 import NasaLogo from "./NasaLogo";
 import { Link } from "react-router-dom";
 import BurgerMenuButton from "./BurgerMenuButton";
+import { useRef } from "react";
 
-export default function MenuHeader() {
+export default function MenuHeader({ setDate }) {
+  const datePickerRef = useRef();
+
   return (
     <div className="menu-header">
       <Link to="/">
@@ -18,12 +21,28 @@ export default function MenuHeader() {
       </Link>
 
       <div className="header-links-desktop">
-        <a href="#">Choose Date</a>
+        <div>
+          <a
+            href="#"
+            onClick={() => {
+              datePickerRef.current.showPicker();
+            }}
+          >
+            Choose Date
+          </a>
+        </div>
+
         <Link to="/about">About APOD</Link>
       </div>
       <div className="header-burger-menu">
-        <BurgerMenuButton></BurgerMenuButton>
+        <BurgerMenuButton datePickerRef={datePickerRef}></BurgerMenuButton>
       </div>
+
+      <input
+        type="date"
+        ref={datePickerRef}
+        onChange={(e) => setDate(e.target.value)}
+      ></input>
     </div>
   );
 }
