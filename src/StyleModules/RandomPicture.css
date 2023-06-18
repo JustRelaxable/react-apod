@@ -20,6 +20,12 @@
   display: flex;
   gap: 30px;
 }
+
+.date-selector-container {
+  display: flex;
+  gap: 20px;
+}
+
 @media screen and (max-width: 1168px) {
   .random-picture-picture {
     max-width: 80%;

@@ -11,6 +11,9 @@ export default function RandomPicture({}) {
   const [title, setTitle] = useState("");
   const [dataReceived, setDataReceived] = useState(false);
   const [selectedDate, setSelectedDate] = useState("");
+  const [datePickerDate, setDatePickerDate] = useState(
+    new Date().toISOString().split("T")[0]
+  );
   const datePickerRef = useRef();
 
   useEffect(() => {
@@ -63,12 +66,23 @@ export default function RandomPicture({}) {
           <h2>
             {title} - {date}
           </h2>
-          <input
-            type="date"
-            ref={datePickerRef}
-            value={selectedDate || date}
-            onChange={(e) => setSelectedDate(e.target.value)}
-          ></input>
+          <div className="date-selector-container">
+            <input
+              type="date"
+              ref={datePickerRef}
+              value={datePickerDate}
+              onChange={(e) => setDatePickerDate(e.target.value)}
+            ></input>
+            <PrimaryButton
+              customStyle={{ padding: "5px" }}
+              onClick={() => {
+                setSelectedDate(datePickerDate);
+              }}
+            >
+              Go to selected Date
+            </PrimaryButton>
+          </div>
+
           <p>{explanation}</p>
           <div className="button-container">
             <PrimaryButton
