@@ -5,9 +5,7 @@ import { Link } from "react-router-dom";
 import BurgerMenuButton from "./BurgerMenuButton";
 import { useRef } from "react";
 
-export default function MenuHeader({ setDate }) {
-  const datePickerRef = useRef();
-
+export default function MenuHeader({}) {
   return (
     <div className="menu-header">
       <Link to="/">
@@ -21,28 +19,11 @@ export default function MenuHeader({ setDate }) {
       </Link>
 
       <div className="header-links-desktop">
-        <div>
-          <a
-            href="#"
-            onClick={() => {
-              datePickerRef.current.showPicker();
-            }}
-          >
-            Choose Date
-          </a>
-        </div>
-
         <Link to="/about">About APOD</Link>
       </div>
       <div className="header-burger-menu">
-        <BurgerMenuButton datePickerRef={datePickerRef}></BurgerMenuButton>
+        <BurgerMenuButton></BurgerMenuButton>
       </div>
-
-      <input
-        type="date"
-        ref={datePickerRef}
-        onChange={(e) => setDate(e.target.value)}
-      ></input>
     </div>
   );
 }

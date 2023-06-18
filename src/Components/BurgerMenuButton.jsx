@@ -20,14 +20,9 @@ export default function BurgerMenuButton({ datePickerRef }) {
       </svg>
       {menuActive && (
         <div className="menu-container">
-          <a
-            href="#"
-            onClick={() => {
-              datePickerRef.current.showPicker();
-            }}
-          >
-            Choose Date
-          </a>
+          <Link to="/" onClick={switchMenuActive}>
+            Home
+          </Link>
           <Link to="/about" onClick={switchMenuActive}>
             About
           </Link>
