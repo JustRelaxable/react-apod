@@ -5,3 +5,15 @@
   padding: 1rem 2rem;
   background-color: var(--color-3);
 }
+
+@media screen and (max-width: 582px) {
+  .footer {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .footer-contact-container {
+    display: flex;
+    gap: 10px;
+  }
+}

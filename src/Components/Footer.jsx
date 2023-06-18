@@ -4,9 +4,11 @@ export default function Footer() {
   return (
     <footer className="footer">
       <p>Website is created with React JS</p>
-      <div>
+      <div className="footer-contact-container">
         <p>Taha Sökmen</p>
-        <a href="#">My Personal Website</a>
+        <a href="https://tahasokmen.netlify.app/" target="_blank">
+          My Personal Website
+        </a>
       </div>
     </footer>
   );

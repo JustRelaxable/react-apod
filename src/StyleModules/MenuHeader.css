@@ -39,6 +39,11 @@
   height: 100%;
 }
 
+.menu-header a {
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
 @media screen and (max-width: 768px) {
   .logo-text {
     display: none;
