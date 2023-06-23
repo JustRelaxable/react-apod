@@ -15,6 +15,7 @@ export default function RandomPicture({}) {
   const [datePickerDate, setDatePickerDate] = useState(
     new Date().toISOString().split("T")[0]
   );
+  const [connectionError, setConnectionError] = useState(false);
   const datePickerRef = useRef();
 
   useEffect(() => {
@@ -32,7 +33,8 @@ export default function RandomPicture({}) {
         setFullImageURL(x.hdurl);
         setMediaType(x["media_type"]);
         setDataReceived(true);
-      });
+      })
+      .catch((x) => setConnectionError(true));
   }, [randomRequestCount]);
 
   useEffect(() => {
@@ -50,7 +52,8 @@ export default function RandomPicture({}) {
         setFullImageURL(x.hdurl);
         setMediaType(x["media_type"]);
         setDataReceived(true);
-      });
+      })
+      .catch((x) => setConnectionError(true));
   }, [selectedDate]);
 
   const containerHeightStyle = dataReceived ? {} : { height: "700px" };
@@ -58,6 +61,19 @@ export default function RandomPicture({}) {
   return (
     <div className="random-picture-container" style={containerHeightStyle}>
       {!dataReceived && <p>Waiting to receive data</p>}
+      {connectionError && (
+        <div>
+          <p>Connection to API resulted in an error!</p>
+          <PrimaryButton
+            onClick={() => {
+              setConnectionError(false);
+              setRandomRequestCount(randomRequestCount + 1);
+            }}
+          >
+            Try again!
+          </PrimaryButton>
+        </div>
+      )}
       {dataReceived && (
         <>
           <h1 className="main-header">Random Astronomy Picture of the Day</h1>
